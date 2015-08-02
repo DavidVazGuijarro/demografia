@@ -8,9 +8,13 @@
 #' 
 #' Home: http://opendata.bcn.cat/opendata/ca/catalog/DEMOGRAFIA/tllars-cll09/
 #' 
-url <- "http://opendata.bcn.cat/opendata/ca/descarrega-fitxer?url=http%3a%2f%2fbismartopendata.blob.core.windows.net%2fopendata%2fopendata%2f2014_tllars-cll09.csv&name=opendata_2014_tllars-cll09.csv"
-df <- read.csv(file = url, sep = ";", header = TRUE, stringsAsFactors = FALSE, encoding = "UTF-8")
-df <- df[complete.cases(df),]
+getDemo.padro.nacionalitatllars <- function()
+{
+    url <- "http://opendata.bcn.cat/opendata/ca/descarrega-fitxer?url=http%3a%2f%2fbismartopendata.blob.core.windows.net%2fopendata%2fopendata%2f2014_tllars-cll09.csv&name=opendata_2014_tllars-cll09.csv"
+    df <- read.csv(file = url, sep = ";", header = TRUE, stringsAsFactors = FALSE, encoding = "UTF-8")
+    df <- df[complete.cases(df),]
+    df
+}
 
 #' Descripci?: Estructura de les llars
 #' Temes: Demografia
@@ -18,8 +22,12 @@ df <- df[complete.cases(df),]
 #' 
 #' Home: http://opendata.bcn.cat/opendata/ca/catalog/DEMOGRAFIA/tllars-cll03/
 #' 
-url <- "http://opendata.bcn.cat/opendata/ca/descarrega-fitxer?url=http%3a%2f%2fbismartopendata.blob.core.windows.net%2fopendata%2fopendata%2f2014_tllars-cll03.csv&name=opendata_2014_tllars-cll03.csv"
-df <- read.csv(file = url, sep = ";", header = TRUE, stringsAsFactors = FALSE, encoding = "UTF-8")
+getDemo.padro.estructura <- function()
+{
+    url <- "http://opendata.bcn.cat/opendata/ca/descarrega-fitxer?url=http%3a%2f%2fbismartopendata.blob.core.windows.net%2fopendata%2fopendata%2f2014_tllars-cll03.csv&name=opendata_2014_tllars-cll03.csv"
+    df <- read.csv(file = url, sep = ";", header = TRUE, stringsAsFactors = FALSE, encoding = "UTF-8")
+    df
+}
 
 #' Descripci?: Llars segons nombre de persones
 #' Temes: Demografia
@@ -27,9 +35,13 @@ df <- read.csv(file = url, sep = ";", header = TRUE, stringsAsFactors = FALSE, e
 #' 
 #' Home: http://opendata.bcn.cat/opendata/ca/catalog/DEMOGRAFIA/tllars-cll01/
 #' 
-url <- "http://opendata.bcn.cat/opendata/ca/descarrega-fitxer?url=http%3a%2f%2fbismartopendata.blob.core.windows.net%2fopendata%2fopendata%2f2014_tllars-cll01.csv&name=opendata_2014_tllars-cll01.csv"
-df <- read.csv(file = url, sep = ";", header = TRUE, stringsAsFactors = FALSE, encoding = "UTF-8")
-df <- df[complete.cases(df),]
+getDemo.padro.nombrepersones <- function()
+{
+    url <- "http://opendata.bcn.cat/opendata/ca/descarrega-fitxer?url=http%3a%2f%2fbismartopendata.blob.core.windows.net%2fopendata%2fopendata%2f2014_tllars-cll01.csv&name=opendata_2014_tllars-cll01.csv"
+    df <- read.csv(file = url, sep = ";", header = TRUE, stringsAsFactors = FALSE, encoding = "UTF-8")
+    df <- df[complete.cases(df),]
+    df
+}
 
 #' Descripci?: Edat per grans grups d'edat de la poblaci?. Lectura Padr?
 #' Temes: Demografia
@@ -37,10 +49,14 @@ df <- df[complete.cases(df),]
 #' 
 #' Home: http://opendata.bcn.cat/opendata/ca/catalog/DEMOGRAFIA/tpob-cp08/
 #' 
-url <- "http://opendata.bcn.cat/opendata/ca/descarrega-fitxer?url=http%3a%2f%2fbismartopendata.blob.core.windows.net%2fopendata%2fopendata%2f2014_tpob_2014-cp08.csv&name=tpob_2014-cp08.csv"
-df <- read.csv(file = url, sep = ";", header = TRUE, stringsAsFactors = FALSE, encoding = "UTF-8")
-df$X <- NULL
-df <- df[complete.cases(df),]
+getDemo.padro.edatagrupat <- function()
+{
+    url <- "http://opendata.bcn.cat/opendata/ca/descarrega-fitxer?url=http%3a%2f%2fbismartopendata.blob.core.windows.net%2fopendata%2fopendata%2f2014_tpob_2014-cp08.csv&name=tpob_2014-cp08.csv"
+    df <- read.csv(file = url, sep = ";", header = TRUE, stringsAsFactors = FALSE, encoding = "UTF-8")
+    df$X <- NULL
+    df <- df[complete.cases(df),]
+    df
+}
 
 #' Descripci?: Edat any a any. De la poblaci? per barris. Xifres oficials
 #' Temes: Demografia
@@ -48,9 +64,13 @@ df <- df[complete.cases(df),]
 #' 
 #' Home: http://opendata.bcn.cat/opendata/ca/catalog/DEMOGRAFIA/ine-ine02/
 #' 
-url <- "http://opendata.bcn.cat/opendata/ca/descarrega-fitxer?url=http%3a%2f%2fbismartopendata.blob.core.windows.net%2fopendata%2fopendata%2f2014_ine-ine02.csv&name=opendata_2014_ine-ine02.csv"
-df <- read.csv(file = url, sep = ";", header = TRUE, stringsAsFactors = FALSE, encoding = "UTF-8")
-df <- df[complete.cases(df),]
+getDemo.idescat.edatbarris <- function()
+{
+    url <- "http://opendata.bcn.cat/opendata/ca/descarrega-fitxer?url=http%3a%2f%2fbismartopendata.blob.core.windows.net%2fopendata%2fopendata%2f2014_ine-ine02.csv&name=opendata_2014_ine-ine02.csv"
+    df <- read.csv(file = url, sep = ";", header = TRUE, stringsAsFactors = FALSE, encoding = "UTF-8")
+    df <- df[complete.cases(df),]
+    df
+}
 
 #' Descripci?: Edat any a any de la poblaci?. Lectura Padr?
 #' Temes: Demografia
@@ -58,9 +78,13 @@ df <- df[complete.cases(df),]
 #' 
 #' Home: http://opendata.bcn.cat/opendata/ca/catalog/DEMOGRAFIA/tpob-cp02/
 #' 
-url <- "http://opendata.bcn.cat/opendata/ca/descarrega-fitxer?url=http%3a%2f%2fbismartopendata.blob.core.windows.net%2fopendata%2fopendata%2f2014_tpob-cp02.csv&name=opendata_2014_tpob-cp02.csv"
-df <- read.csv(file = url, sep = ";", header = TRUE, stringsAsFactors = FALSE, encoding = "UTF-8")
-df <- df[complete.cases(df),]
+getDemo.padro.edat <- function()
+{
+    url <- "http://opendata.bcn.cat/opendata/ca/descarrega-fitxer?url=http%3a%2f%2fbismartopendata.blob.core.windows.net%2fopendata%2fopendata%2f2014_tpob-cp02.csv&name=opendata_2014_tpob-cp02.csv"
+    df <- read.csv(file = url, sep = ";", header = TRUE, stringsAsFactors = FALSE, encoding = "UTF-8")
+    df <- df[complete.cases(df),]
+    df
+}
 
 #' Descripci?: Poblaci?. Caracter?stiques de la poblaci? per barris. Sexe. Lectura Padr?
 #' Temes: Demografia
@@ -68,9 +92,13 @@ df <- df[complete.cases(df),]
 #' 
 #' Home: http://opendata.bcn.cat/opendata/ca/catalog/DEMOGRAFIA/tpob-cp01/
 #' 
-url <- "http://opendata.bcn.cat/opendata/ca/descarrega-fitxer?url=http%3a%2f%2fbismartopendata.blob.core.windows.net%2fopendata%2fopendata%2f2014_tpob-cp01.csv&name=opendata_2014_tpob-cp01.csv"
-df <- read.csv(file = url, sep = ";", header = TRUE, stringsAsFactors = FALSE, encoding = "UTF-8")
-df <- df[complete.cases(df),]
+getDemo.padro.sexebarris <- function()
+{
+    url <- "http://opendata.bcn.cat/opendata/ca/descarrega-fitxer?url=http%3a%2f%2fbismartopendata.blob.core.windows.net%2fopendata%2fopendata%2f2014_tpob-cp01.csv&name=opendata_2014_tpob-cp01.csv"
+    df <- read.csv(file = url, sep = ";", header = TRUE, stringsAsFactors = FALSE, encoding = "UTF-8")
+    df <- df[complete.cases(df),]
+    df
+}
 
 #' Descripci?: Xifres oficials de poblaci?. Per barris. Sexe. Xifres oficials
 #' Temes: Demografia
@@ -78,8 +106,12 @@ df <- df[complete.cases(df),]
 #' 
 #' Home: http://opendata.bcn.cat/opendata/ca/catalog/DEMOGRAFIA/ine-ine01/
 #' 
-url <- "http://opendata.bcn.cat/opendata/ca/descarrega-fitxer?url=http%3a%2f%2fbismartopendata.blob.core.windows.net%2fopendata%2fopendata%2f2014_ine-ine01.csv&name=opendata_2014_ine-ine01.csv"
-df <- read.csv(file = url, sep = ";", header = TRUE, stringsAsFactors = FALSE, encoding = "UTF-8")
+getDemo.idescat.sexebarris <- function()
+{
+    url <- "http://opendata.bcn.cat/opendata/ca/descarrega-fitxer?url=http%3a%2f%2fbismartopendata.blob.core.windows.net%2fopendata%2fopendata%2f2014_ine-ine01.csv&name=opendata_2014_ine-ine01.csv"
+    df <- read.csv(file = url, sep = ";", header = TRUE, stringsAsFactors = FALSE, encoding = "UTF-8")
+    df
+}
 
 #' Descripci?: Poblaci? de nacionalitat espanyola per edat quinquennal. Lectura Padr?
 #' Temes: Demografia
@@ -87,9 +119,13 @@ df <- read.csv(file = url, sep = ";", header = TRUE, stringsAsFactors = FALSE, e
 #' 
 #' Home: http://opendata.bcn.cat/opendata/ca/catalog/DEMOGRAFIA/tpob-cp17/
 #' 
-url <- "http://opendata.bcn.cat/opendata/ca/descarrega-fitxer?url=http%3a%2f%2fbismartopendata.blob.core.windows.net%2fopendata%2fopendata%2f2014_tpob_2014-cp17.csv&name=tpob_2014-cp17.csv"
-df <- read.csv(file = url, sep = ";", header = TRUE, stringsAsFactors = FALSE, encoding = "UTF-8")
-df <- df[complete.cases(df),]
+getDemo.padro.edatespanyols <- function()
+{
+    url <- "http://opendata.bcn.cat/opendata/ca/descarrega-fitxer?url=http%3a%2f%2fbismartopendata.blob.core.windows.net%2fopendata%2fopendata%2f2014_tpob_2014-cp17.csv&name=tpob_2014-cp17.csv"
+    df <- read.csv(file = url, sep = ";", header = TRUE, stringsAsFactors = FALSE, encoding = "UTF-8")
+    df <- df[complete.cases(df),]
+    df
+}
 
 #' Descripci?: Poblaci? de nacionalitat estrangera per edat quinquennal. Lectura Padr?
 #' Temes: Demografia
@@ -97,9 +133,13 @@ df <- df[complete.cases(df),]
 #' 
 #' Home: http://opendata.bcn.cat/opendata/ca/catalog/DEMOGRAFIA/tpob-cp18/
 #' 
-url <- "http://opendata.bcn.cat/opendata/ca/descarrega-fitxer?url=http%3a%2f%2fbismartopendata.blob.core.windows.net%2fopendata%2fopendata%2f2014_tpob_2014-cp18.csv&name=tpob_2014-cp18.csv"
-df <- read.csv(file = url, sep = ";", header = TRUE, stringsAsFactors = FALSE, encoding = "UTF-8")
-df <- df[complete.cases(df),]
+getDemo.padro.edatestranger <- function()
+{
+    url <- "http://opendata.bcn.cat/opendata/ca/descarrega-fitxer?url=http%3a%2f%2fbismartopendata.blob.core.windows.net%2fopendata%2fopendata%2f2014_tpob_2014-cp18.csv&name=tpob_2014-cp18.csv"
+    df <- read.csv(file = url, sep = ";", header = TRUE, stringsAsFactors = FALSE, encoding = "UTF-8")
+    df <- df[complete.cases(df),]
+    df
+}
 
 #' Descripci?: Poblaci? que viu sola per edat quinquennal. Lectura Padr?
 #' Temes: Demografia
@@ -107,11 +147,15 @@ df <- df[complete.cases(df),]
 #' 
 #' Home: http://opendata.bcn.cat/opendata/ca/catalog/DEMOGRAFIA/tpob-cp24/
 #' 
-url <- "http://opendata.bcn.cat/opendata/ca/descarrega-fitxer?url=http%3a%2f%2fbismartopendata.blob.core.windows.net%2fopendata%2fopendata%2f2014_tpob_2014-cp24.csv&name=tpob_2014-cp24.csv"
-df <- read.csv(file = url, sep = ";", header = TRUE, stringsAsFactors = FALSE, encoding = "UTF-8")
-df$X <- NULL
-df$X.1 <- NULL
-df <- df[complete.cases(df),]
+getDemo.padro.edatviusol <- function()
+{
+    url <- "http://opendata.bcn.cat/opendata/ca/descarrega-fitxer?url=http%3a%2f%2fbismartopendata.blob.core.windows.net%2fopendata%2fopendata%2f2014_tpob_2014-cp24.csv&name=tpob_2014-cp24.csv"
+    df <- read.csv(file = url, sep = ";", header = TRUE, stringsAsFactors = FALSE, encoding = "UTF-8")
+    df$X <- NULL
+    df$X.1 <- NULL
+    df <- df[complete.cases(df),]
+    df
+}
 
 #' Descripci?: Ocupaci? mitjana de les llars
 #' Temes: Demografia
@@ -119,9 +163,13 @@ df <- df[complete.cases(df),]
 #' 
 #' Home: http://opendata.bcn.cat/opendata/ca/catalog/DEMOGRAFIA/tllars-cll02/
 #' 
-url <- "http://opendata.bcn.cat/opendata/ca/descarrega-fitxer?url=http%3a%2f%2fbismartopendata.blob.core.windows.net%2fopendata%2fopendata%2f2014_tllars-cll02.csv&name=opendata_2014_tllars-cll02.csv"
-df <- read.csv(file = url, sep = ";", header = TRUE, stringsAsFactors = FALSE, encoding = "UTF-8")
-df <- df[complete.cases(df),]
+getDemo.padro.ocupacio <- function()
+{
+    url <- "http://opendata.bcn.cat/opendata/ca/descarrega-fitxer?url=http%3a%2f%2fbismartopendata.blob.core.windows.net%2fopendata%2fopendata%2f2014_tllars-cll02.csv&name=opendata_2014_tllars-cll02.csv"
+    df <- read.csv(file = url, sep = ";", header = TRUE, stringsAsFactors = FALSE, encoding = "UTF-8")
+    df <- df[complete.cases(df),]
+    df
+}
 
 #' Descripci?: Nivell acad?mic de la poblaci?. Lectura Padr?
 #' Temes: Demografia
@@ -129,9 +177,13 @@ df <- df[complete.cases(df),]
 #' 
 #' Home: http://opendata.bcn.cat/opendata/ca/catalog/DEMOGRAFIA/tpob-cp27/
 #' 
-url <- "http://opendata.bcn.cat/opendata/ca/descarrega-fitxer?url=http%3a%2f%2fbismartopendata.blob.core.windows.net%2fopendata%2fopendata%2f2014_tpob_2014-cp27.csv&name=tpob_2014-cp27.csv"
-df <- read.csv(file = url, sep = ";", header = TRUE, stringsAsFactors = FALSE, encoding = "UTF-8")
-df <- df[complete.cases(df),]
+getDemo.padro.nivellacademic <- function()
+{
+    url <- "http://opendata.bcn.cat/opendata/ca/descarrega-fitxer?url=http%3a%2f%2fbismartopendata.blob.core.windows.net%2fopendata%2fopendata%2f2014_tpob_2014-cp27.csv&name=tpob_2014-cp27.csv"
+    df <- read.csv(file = url, sep = ";", header = TRUE, stringsAsFactors = FALSE, encoding = "UTF-8")
+    df <- df[complete.cases(df),]
+    df
+}
 
 #' Descripci?: Nacionalitat de la poblaci?. Lectura Padr?
 #' Temes: Demografia
@@ -139,15 +191,11 @@ df <- df[complete.cases(df),]
 #' 
 #' Home: http://opendata.bcn.cat/opendata/ca/catalog/DEMOGRAFIA/tpob-cp14/
 #' 
-url <- "http://opendata.bcn.cat/opendata/ca/descarrega-fitxer?url=http%3a%2f%2fbismartopendata.blob.core.windows.net%2fopendata%2fopendata%2f2014_tpob_2014-cp14.csv&name=tpob_2014-cp14.csv"
-df <- read.csv(file = url, sep = ";", header = TRUE, stringsAsFactors = FALSE, encoding = "UTF-8")
-df <- df[complete.cases(df),]
+getDemo.padro.nacionalitat <- function()
+{
+    url <- "http://opendata.bcn.cat/opendata/ca/descarrega-fitxer?url=http%3a%2f%2fbismartopendata.blob.core.windows.net%2fopendata%2fopendata%2f2014_tpob_2014-cp14.csv&name=tpob_2014-cp14.csv"
+    df <- read.csv(file = url, sep = ";", header = TRUE, stringsAsFactors = FALSE, encoding = "UTF-8")
+    df <- df[complete.cases(df),]
+    df
+}
 
-################################################################################
-# MAPES
-################################################################################
-#'
-#' http://opendata.bcn.cat/opendata/ca/catalog [FORMAT WMS]
-#' 
-#' http://rstudio.github.io/leaflet/basemaps.html
-#' http://www.r-bloggers.com/leaflet-interactive-web-maps-with-r/
