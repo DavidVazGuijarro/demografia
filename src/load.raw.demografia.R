@@ -13,6 +13,7 @@ getDemo.padro.nacionalitatllars <- function()
     url <- "http://opendata.bcn.cat/opendata/ca/descarrega-fitxer?url=http%3a%2f%2fbismartopendata.blob.core.windows.net%2fopendata%2fopendata%2f2014_tllars-cll09.csv&name=opendata_2014_tllars-cll09.csv"
     df <- read.csv(file = url, sep = ";", header = TRUE, stringsAsFactors = FALSE, encoding = "UTF-8")
     df <- df[complete.cases(df),]
+    df$BARRIS <- sapply(strsplit(df$BARRIS,"\\."), function(x) str_trim(x[2]))
     df
 }
 
@@ -26,6 +27,7 @@ getDemo.padro.estructura <- function()
 {
     url <- "http://opendata.bcn.cat/opendata/ca/descarrega-fitxer?url=http%3a%2f%2fbismartopendata.blob.core.windows.net%2fopendata%2fopendata%2f2014_tllars-cll03.csv&name=opendata_2014_tllars-cll03.csv"
     df <- read.csv(file = url, sep = ";", header = TRUE, stringsAsFactors = FALSE, encoding = "UTF-8")
+    df$BARRIS <- sapply(strsplit(df$BARRIS,"\\."), function(x) str_trim(x[2]))
     df
 }
 
@@ -40,6 +42,7 @@ getDemo.padro.nombrepersones <- function()
     url <- "http://opendata.bcn.cat/opendata/ca/descarrega-fitxer?url=http%3a%2f%2fbismartopendata.blob.core.windows.net%2fopendata%2fopendata%2f2014_tllars-cll01.csv&name=opendata_2014_tllars-cll01.csv"
     df <- read.csv(file = url, sep = ";", header = TRUE, stringsAsFactors = FALSE, encoding = "UTF-8")
     df <- df[complete.cases(df),]
+    df$BARRIS <- sapply(strsplit(df$BARRIS,"\\."), function(x) str_trim(x[2]))
     df
 }
 
@@ -52,9 +55,10 @@ getDemo.padro.nombrepersones <- function()
 getDemo.padro.edatagrupat <- function()
 {
     url <- "http://opendata.bcn.cat/opendata/ca/descarrega-fitxer?url=http%3a%2f%2fbismartopendata.blob.core.windows.net%2fopendata%2fopendata%2f2014_tpob_2014-cp08.csv&name=tpob_2014-cp08.csv"
-    df <- read.csv(file = url, sep = ";", header = TRUE, stringsAsFactors = FALSE, encoding = "UTF-8")
+    df <- read.csv(file = url, sep = ";", header = TRUE, stringsAsFactors = FALSE)
     df$X <- NULL
     df <- df[complete.cases(df),]
+    df$BARRIS <- sapply(strsplit(df$BARRIS,"\\."), function(x) str_trim(x[2]))
     df
 }
 
@@ -69,6 +73,7 @@ getDemo.idescat.edatbarris <- function()
     url <- "http://opendata.bcn.cat/opendata/ca/descarrega-fitxer?url=http%3a%2f%2fbismartopendata.blob.core.windows.net%2fopendata%2fopendata%2f2014_ine-ine02.csv&name=opendata_2014_ine-ine02.csv"
     df <- read.csv(file = url, sep = ";", header = TRUE, stringsAsFactors = FALSE, encoding = "UTF-8")
     df <- df[complete.cases(df),]
+    df$BARRIS <- sapply(strsplit(df$BARRIS,"\\."), function(x) str_trim(x[2]))
     df
 }
 
@@ -83,6 +88,7 @@ getDemo.padro.edat <- function()
     url <- "http://opendata.bcn.cat/opendata/ca/descarrega-fitxer?url=http%3a%2f%2fbismartopendata.blob.core.windows.net%2fopendata%2fopendata%2f2014_tpob-cp02.csv&name=opendata_2014_tpob-cp02.csv"
     df <- read.csv(file = url, sep = ";", header = TRUE, stringsAsFactors = FALSE, encoding = "UTF-8")
     df <- df[complete.cases(df),]
+    df$BARRIS <- sapply(strsplit(df$BARRIS,"\\."), function(x) str_trim(x[2]))
     df
 }
 
@@ -97,6 +103,7 @@ getDemo.padro.sexebarris <- function()
     url <- "http://opendata.bcn.cat/opendata/ca/descarrega-fitxer?url=http%3a%2f%2fbismartopendata.blob.core.windows.net%2fopendata%2fopendata%2f2014_tpob-cp01.csv&name=opendata_2014_tpob-cp01.csv"
     df <- read.csv(file = url, sep = ";", header = TRUE, stringsAsFactors = FALSE, encoding = "UTF-8")
     df <- df[complete.cases(df),]
+    df$BARRIS <- sapply(strsplit(df$BARRIS,"\\."), function(x) str_trim(x[2]))
     df
 }
 
@@ -110,6 +117,7 @@ getDemo.idescat.sexebarris <- function()
 {
     url <- "http://opendata.bcn.cat/opendata/ca/descarrega-fitxer?url=http%3a%2f%2fbismartopendata.blob.core.windows.net%2fopendata%2fopendata%2f2014_ine-ine01.csv&name=opendata_2014_ine-ine01.csv"
     df <- read.csv(file = url, sep = ";", header = TRUE, stringsAsFactors = FALSE, encoding = "UTF-8")
+    df$BARRIS <- sapply(strsplit(df$BARRIS,"\\."), function(x) str_trim(x[2]))
     df
 }
 
@@ -122,8 +130,11 @@ getDemo.idescat.sexebarris <- function()
 getDemo.padro.edatespanyols <- function()
 {
     url <- "http://opendata.bcn.cat/opendata/ca/descarrega-fitxer?url=http%3a%2f%2fbismartopendata.blob.core.windows.net%2fopendata%2fopendata%2f2014_tpob_2014-cp17.csv&name=tpob_2014-cp17.csv"
-    df <- read.csv(file = url, sep = ";", header = TRUE, stringsAsFactors = FALSE, encoding = "UTF-8")
+    df <- read.csv(file = url, sep = ";", header = TRUE, stringsAsFactors = FALSE)
     df <- df[complete.cases(df),]
+    df$Barris <- sapply(strsplit(df$Barris,"\\."), function(x) str_trim(x[2]))
+    names(df)[1] <- "X.U.FEFF.DTE"
+    names(df)[2] <- "BARRIS"
     df
 }
 
@@ -136,8 +147,11 @@ getDemo.padro.edatespanyols <- function()
 getDemo.padro.edatestranger <- function()
 {
     url <- "http://opendata.bcn.cat/opendata/ca/descarrega-fitxer?url=http%3a%2f%2fbismartopendata.blob.core.windows.net%2fopendata%2fopendata%2f2014_tpob_2014-cp18.csv&name=tpob_2014-cp18.csv"
-    df <- read.csv(file = url, sep = ";", header = TRUE, stringsAsFactors = FALSE, encoding = "UTF-8")
+    df <- read.csv(file = url, sep = ";", header = TRUE, stringsAsFactors = FALSE)
     df <- df[complete.cases(df),]
+    df$Barris <- sapply(strsplit(df$Barris,"\\."), function(x) str_trim(x[2]))
+    names(df)[1] <- "X.U.FEFF.DTE"
+    names(df)[2] <- "BARRIS"
     df
 }
 
@@ -150,10 +164,13 @@ getDemo.padro.edatestranger <- function()
 getDemo.padro.edatviusol <- function()
 {
     url <- "http://opendata.bcn.cat/opendata/ca/descarrega-fitxer?url=http%3a%2f%2fbismartopendata.blob.core.windows.net%2fopendata%2fopendata%2f2014_tpob_2014-cp24.csv&name=tpob_2014-cp24.csv"
-    df <- read.csv(file = url, sep = ";", header = TRUE, stringsAsFactors = FALSE, encoding = "UTF-8")
+    df <- read.csv(file = url, sep = ";", header = TRUE, stringsAsFactors = FALSE)
     df$X <- NULL
     df$X.1 <- NULL
     df <- df[complete.cases(df),]
+    df$Barris <- sapply(strsplit(df$Barris,"\\."), function(x) str_trim(x[2]))
+    names(df)[1] <- "X.U.FEFF.DTE"
+    names(df)[2] <- "BARRIS"
     df
 }
 
@@ -168,6 +185,7 @@ getDemo.padro.ocupacio <- function()
     url <- "http://opendata.bcn.cat/opendata/ca/descarrega-fitxer?url=http%3a%2f%2fbismartopendata.blob.core.windows.net%2fopendata%2fopendata%2f2014_tllars-cll02.csv&name=opendata_2014_tllars-cll02.csv"
     df <- read.csv(file = url, sep = ";", header = TRUE, stringsAsFactors = FALSE, encoding = "UTF-8")
     df <- df[complete.cases(df),]
+    df$BARRIS <- sapply(strsplit(df$BARRIS,"\\."), function(x) str_trim(x[2]))
     df
 }
 
@@ -180,8 +198,11 @@ getDemo.padro.ocupacio <- function()
 getDemo.padro.nivellacademic <- function()
 {
     url <- "http://opendata.bcn.cat/opendata/ca/descarrega-fitxer?url=http%3a%2f%2fbismartopendata.blob.core.windows.net%2fopendata%2fopendata%2f2014_tpob_2014-cp27.csv&name=tpob_2014-cp27.csv"
-    df <- read.csv(file = url, sep = ";", header = TRUE, stringsAsFactors = FALSE, encoding = "UTF-8")
+    df <- read.csv(file = url, sep = ";", header = TRUE, stringsAsFactors = FALSE)
     df <- df[complete.cases(df),]
+    df$Barris <- sapply(strsplit(df$Barris,"\\."), function(x) str_trim(x[2]))
+    names(df)[1] <- "X.U.FEFF.DTE"
+    names(df)[2] <- "BARRIS"
     df
 }
 
@@ -194,8 +215,11 @@ getDemo.padro.nivellacademic <- function()
 getDemo.padro.nacionalitat <- function()
 {
     url <- "http://opendata.bcn.cat/opendata/ca/descarrega-fitxer?url=http%3a%2f%2fbismartopendata.blob.core.windows.net%2fopendata%2fopendata%2f2014_tpob_2014-cp14.csv&name=tpob_2014-cp14.csv"
-    df <- read.csv(file = url, sep = ";", header = TRUE, stringsAsFactors = FALSE, encoding = "UTF-8")
+    df <- read.csv(file = url, sep = ";", header = TRUE, stringsAsFactors = FALSE)
     df <- df[complete.cases(df),]
+    df$Barris <- sapply(strsplit(df$Barris,"\\."), function(x) str_trim(x[2]))
+    names(df)[1] <- "X.U.FEFF.DTE"
+    names(df)[2] <- "BARRIS"
     df
 }
 
